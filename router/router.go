@@ -6,9 +6,9 @@ import (
 )
 
 func StockRoutes(mux *http.ServeMux) {
-	mux.HandleFunc("/allStocks", handler.GetAllStocks)
-	mux.HandleFunc("/getstock", handler.UpdateStock)
-	mux.HandleFunc("/createStock", handler.CreateStock)
-	mux.HandleFunc("/updateStock", handler.UpdateStock)
-	mux.HandleFunc("/deleteStock", handler.DeleteStock)
+	mux.HandleFunc("GET /stocks", handler.GetAllStocks)
+	mux.HandleFunc("GET /stocks/{id}", handler.GetStock)
+	mux.HandleFunc("/stocks", handler.CreateStock)
+	mux.HandleFunc("/stocks/{id}", handler.UpdateStock)
+	mux.HandleFunc("DELETE /stocks/{id}", handler.DeleteStock)
 }
